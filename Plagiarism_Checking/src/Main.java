@@ -3,7 +3,7 @@ public class Main
 {
 	public static void main(String[] args)
 	{
-String fileName = "test1.txt";
+		String fileName = "test1.txt";
 		
 		String line = null;
 		
@@ -26,5 +26,7 @@ String fileName = "test1.txt";
 		catch(IOException ex) {
 			System.out.println("Error reading file '" + fileName + "'");
 		}
+		
+		
 	}
 }	
