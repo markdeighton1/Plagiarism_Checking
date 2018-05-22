@@ -80,6 +80,18 @@ public class ReadFromFile
 		{
 			System.out.println("You have selected test2.txt\n");
 			this.setFile("test2.txt");
+		} else if(i.equals("Test3.txt") || i.equals("test3.txt") || i.equals("test3") || i.equals("3"))
+		{
+			System.out.println("You have selected test3.txt\n");
+			this.setFile("test3.txt");
+		}else if(i.equals("Test4.txt") || i.equals("test4.txt") || i.equals("test4") || i.equals("4"))
+		{
+			System.out.println("You have selected test4.txt\n");
+			this.setFile("test4.txt");
+		}else if(i.equals("Test5.txt") || i.equals("test5.txt") || i.equals("test5") || i.equals("5"))
+		{
+			System.out.println("You have selected test5.txt\n");
+			this.setFile("test5.txt");
 		}
 		sc.close();
 	}
