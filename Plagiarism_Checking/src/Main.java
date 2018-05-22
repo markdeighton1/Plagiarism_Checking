@@ -28,5 +28,10 @@ public class Main
 			System.out.println("Error reading file '" + fileName + "'");
 		}*/
 		
+		ReadFromFile RFF = new ReadFromFile();
+		RFF.removeCapitals();
+		RFF.removePunctuation();
+		String content = RFF.getContent();
+		System.out.println(content);
 	}
 }	

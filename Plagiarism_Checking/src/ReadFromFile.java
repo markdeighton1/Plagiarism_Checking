@@ -8,6 +8,7 @@ public class ReadFromFile
 	private String file3 = "test3.txt";
 	private String file4 = "test4.txt";
 	private String file5 = "test5.txt";
+	private String content; 
 	
 	public String getFile1()
 	{
@@ -34,21 +35,24 @@ public class ReadFromFile
 		return file5;
 	}
 	
+	public String getContent()
+	{
+		return content;
+	}
 	
 	public String removeCapitals()
 	{
 		try {
 			BufferedReader in = new BufferedReader(new FileReader(file1));
-			String fileContent = null;
 			String line = null;
 			
 			while((line = in.readLine()) != null)
 			{
-				fileContent = fileContent + line;
+				content = content + line;
 			}
 			
-			fileContent = fileContent.toLowerCase();
-			System.out.println(fileContent);
+			content = content.toLowerCase();
+			System.out.println(content);
 			in.close();
 		} catch(FileNotFoundException e) {
 			e.printStackTrace();
@@ -57,23 +61,27 @@ public class ReadFromFile
 		} 
 		return null;
 	}
+	
 	public void removePunctuation()
 	{
 		try {
 			BufferedReader in = new BufferedReader(new FileReader(file1));
-			String fileContent = null;
 			String line = null;
 			
 			while((line = in.readLine()) != null)
 			{
-				fileContent = fileContent + line;
+				content = content + line;
 			}
-			fileContent = fileContent.replaceAll("[^a-zA-Z ]", "      ");
-			System.out.println(fileContent);
+			content = content.replaceAll("[^a-zA-Z ]", "      ");
+			System.out.println(content);
+			in.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch(IOException e) {
 			e.printStackTrace();
 		}
 	}
+	
+	
+	
 }
