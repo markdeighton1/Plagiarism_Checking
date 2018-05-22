@@ -29,7 +29,7 @@ public class Main
 		}*/
 		
 		ReadFromFile RFF = new ReadFromFile();
-		RFF.removeCapitalsAndPunctuation();
+		RFF.removeFormatting();
 		String content = RFF.getContent();
 		System.out.println(content);
 	}

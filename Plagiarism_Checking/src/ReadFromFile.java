@@ -8,7 +8,7 @@ public class ReadFromFile
 	private String file3 = "test3.txt";
 	private String file4 = "test4.txt";
 	private String file5 = "test5.txt";
-	private String content; 
+	private String content = ""; 
 	
 	public String getFile1()
 	{
@@ -40,11 +40,11 @@ public class ReadFromFile
 		return content;
 	}
 	
-	public void removeCapitalsAndPunctuation()
+	public void removeFormatting()
 	{
 		try {
 			BufferedReader in = new BufferedReader(new FileReader(file1));
-			String line;
+			String line = "";
 			
 			while((line = in.readLine()) != null)
 			{
