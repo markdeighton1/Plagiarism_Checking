@@ -28,10 +28,5 @@ public class Main
 			System.out.println("Error reading file '" + fileName + "'");
 		}*/
 		
-		
-		ReadFromFile RFF = new ReadFromFile();
-		RFF.removeCaptials();
-		
-		
 	}
 }	

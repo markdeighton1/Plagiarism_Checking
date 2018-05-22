@@ -57,5 +57,23 @@ public class ReadFromFile
 		} 
 		return null;
 	}
-	
+	public void removePunctuation()
+	{
+		try {
+			BufferedReader in = new BufferedReader(new FileReader(file1));
+			String fileContent = null;
+			String line = null;
+			
+			while((line = in.readLine()) != null)
+			{
+				fileContent = fileContent + line;
+			}
+			fileContent = fileContent.replaceAll("[^a-zA-Z ]", "      ");
+			System.out.println(fileContent);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch(IOException e) {
+			e.printStackTrace();
+		}
+	}
 }
