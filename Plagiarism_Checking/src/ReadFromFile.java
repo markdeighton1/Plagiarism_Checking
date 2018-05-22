@@ -40,58 +40,22 @@ public class ReadFromFile
 		return content;
 	}
 	
-	public String removeCapitals()
-	{
-		try {
-			BufferedReader in = new BufferedReader(new FileReader(file1));
-			String line = null;
-			
-			while((line = in.readLine()) != null)
-			{
-				content = content + line;
-			}
-			
-			content = content.toLowerCase();
-			in.close();
-		} catch(FileNotFoundException e) {
-			e.printStackTrace();
-		} catch(IOException e) {
-			e.printStackTrace();
-		} 
-		return null;
-	}
-	
-	public void removePunctuation()
-	{
-		try {
-			BufferedReader in = new BufferedReader(new FileReader(file1));
-			String line = null;
-			
-			while((line = in.readLine()) != null)
-			{
-				content = content + line;
-			}
-			content = content.replaceAll("[^a-zA-Z ]", "      ");
-			in.close();
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch(IOException e) {
-			e.printStackTrace();
-		}
-	}
-	
 	public void removeCapitalsAndPunctuation()
 	{
 		try {
 			BufferedReader in = new BufferedReader(new FileReader(file1));
-			String line = null;
+			String line;
 			
 			while((line = in.readLine()) != null)
 			{
+				line = line.trim();
+				if (!line.equals(" "))
+				{
 				content = content + line;
+				}
 			}
 			content = content.toLowerCase();
-			content = content.replaceAll("[^a-zA-Z ]", "      ");
+			content = content.replaceAll("[^a-zA-Z ]", "");
 			in.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
