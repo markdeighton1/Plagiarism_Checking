@@ -52,7 +52,6 @@ public class ReadFromFile
 			}
 			
 			content = content.toLowerCase();
-			System.out.println(content);
 			in.close();
 		} catch(FileNotFoundException e) {
 			e.printStackTrace();
@@ -73,7 +72,6 @@ public class ReadFromFile
 				content = content + line;
 			}
 			content = content.replaceAll("[^a-zA-Z ]", "      ");
-			System.out.println(content);
 			in.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -82,6 +80,24 @@ public class ReadFromFile
 		}
 	}
 	
-	
+	public void removeCapitalsAndPunctuation()
+	{
+		try {
+			BufferedReader in = new BufferedReader(new FileReader(file1));
+			String line = null;
+			
+			while((line = in.readLine()) != null)
+			{
+				content = content + line;
+			}
+			content = content.toLowerCase();
+			content = content.replaceAll("[^a-zA-Z ]", "      ");
+			in.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch(IOException e) {
+			e.printStackTrace();
+		}
+	}
 	
 }
