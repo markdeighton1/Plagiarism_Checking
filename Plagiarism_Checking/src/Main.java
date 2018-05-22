@@ -13,6 +13,10 @@ public class Main
 		RFF.FileSelect();
 		RFF.removeFormatting();*/
 		
+		Frequency Frequency = new Frequency();
+		Frequency.frequency("test2.txt");
+		Frequency.uniqueWords("test2.txt");
+		
 		
 		
 	}

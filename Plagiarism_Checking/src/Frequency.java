@@ -10,10 +10,10 @@ import java.util.Set;
 public class Frequency {
 	
 
-	public void frequency() 
+	public void frequency(String fileName) 
 	{		
 			try {
-				BufferedReader reader = new BufferedReader(new FileReader("test1.txt"));
+				BufferedReader reader = new BufferedReader(new FileReader(fileName));
 				Map<String, Integer> frequency = new HashMap<>();
 				
 				String line = reader.readLine();
@@ -42,7 +42,8 @@ public class Frequency {
 					line = reader.readLine();
 				}
 				reader.close();
-				System.out.println("\n" + frequency);
+				System.out.println("FileName: " + fileName + "\n");
+				System.out.println(frequency);
 				
 				int mostFrequentlyUsed = 0;
 				String theWord = null;
@@ -55,8 +56,12 @@ public class Frequency {
 					}
 				}
 				System.out.println();
-				System.out.printf("the most frequently used word is '%s', %d times", 
+				System.out.printf("The most frequently used word is '%s', used %d times.", 
 						theWord, mostFrequentlyUsed);
+				System.out.println();
+				
+				
+				
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -74,7 +79,6 @@ public class Frequency {
 			Set<String> wordsOf = new HashSet<>();
 		
 			String line = reader.readLine();
-			int totalLines = 0;
 			int totalWords = 0;
 			while(line != null) 
 			{
@@ -85,24 +89,16 @@ public class Frequency {
 					
 					for(String word : words)
 					{
-						String cleanedUpWord = word.toLowerCase().replace(",","")
-																.replace(":", "")
-																.replace(".","")
-																.replace("\"", "");
+						String cleanedUpWord = word.toLowerCase().replaceAll("[^a-zA-Z ]", "");
 						wordsOf.add(cleanedUpWord);
 					}
 				}
-				totalLines++;
 				line = reader.readLine();
 			} 
-			System.out.println(wordsOf);
-			
 			System.out.println();
-			System.out.println("How many unique words were in the article?");
+			System.out.println("Unique Words:");
 			System.out.println(wordsOf.size());
 			System.out.println();
-			System.out.println("Total lines:");
-			System.out.println(totalLines);
 			System.out.println("Total Words: ");
 			System.out.println(totalWords);
 			reader.close();
