@@ -47,9 +47,16 @@ public class ReadFromFile
 	{
 		return content;
 	}
+	
+	public void setContent(String content)
+	{
+		this.content = content;
+	}
+	
 	public void setFile(String selected) {
 		this.selected = selected;
 	}
+	
 	public String getSelected()
 	{
 		return selected;
@@ -57,8 +64,8 @@ public class ReadFromFile
 
 	public void FileSelect() {
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Available Files are:\n"
-				+ file1 + "\n" +
+		System.out.println("Available Files are:\n" + 
+				file1 + "\n" +
 				file2 + "\n" +
 				file3 + "\n" +
 				file4 + "\n" +
@@ -67,8 +74,12 @@ public class ReadFromFile
 		String i = sc.nextLine();
 		if(i.equals("Test1.txt") || i.equals("test1.txt") || i.equals("test1") || i.equals("1"))
 		{
-			System.out.println("You have selected file1\n");
+			System.out.println("You have selected test1.txt\n");
 			this.setFile("test1.txt");
+		} else if(i.equals("Test2.txt") || i.equals("test2.txt") || i.equals("test2") || i.equals("2"))
+		{
+			System.out.println("You have selected test2.txt\n");
+			this.setFile("test2.txt");
 		}
 		sc.close();
 	}
@@ -78,7 +89,7 @@ public class ReadFromFile
 	{
 		try {
 			
-			BufferedReader in = new BufferedReader(new FileReader(file1));
+			BufferedReader in = new BufferedReader(new FileReader(selected));
 			String line = "";
 			
 			while((line = in.readLine()) != null)
@@ -91,8 +102,9 @@ public class ReadFromFile
 			}
 			content = content.toLowerCase();
 			content = content.replaceAll("[^a-zA-Z ]", "");
+			this.setContent(content);
 			in.close();
-			System.out.println(content + "\n");
+			//System.out.println(content + "\n");
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch(IOException e) {

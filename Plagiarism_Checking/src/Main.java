@@ -1,24 +1,23 @@
-import java.io.*;
-import java.util.List;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
 
 public class Main 
 {
 	public static void main(String[] args) throws Exception
 	{
 		
-		/*ReadFromFile RFF = new ReadFromFile();
-		RFF.FileSelect();
-		RFF.removeFormatting();*/
+		/*
+		 * 	String file = RFF.getContent();
+		 *	System.out.println(file);
+		 */
 		
 		ReadFromFile RFF = new ReadFromFile();
 		RFF.FileSelect();
 		RFF.removeFormatting();
+		String file = RFF.getContent();
+		//System.out.println(file);
+
 		
 		Frequency Frequency = new Frequency();
-		Frequency.frequency(RFF.getSelected());
+		Frequency.frequency(file);
 		Frequency.uniqueWords(RFF.getSelected());
 		
 		

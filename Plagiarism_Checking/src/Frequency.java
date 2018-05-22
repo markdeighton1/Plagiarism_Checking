@@ -9,72 +9,47 @@ import java.util.Set;
 
 public class Frequency {
 	
-
-	public void frequency(String fileName) 
+	
+	public void frequency(String file) 
 	{		
-			try {
-				BufferedReader reader = new BufferedReader(new FileReader(fileName));
 				Map<String, Integer> frequency = new HashMap<>();
+						
 				
-				String line = reader.readLine();
-				while(line != null) {
-					//System.out.println("Processing line: " + line);
-					
-					if(!line.trim().equals("")) {
-						String [] words = line.split(" ");
+				String[] words = file.split(" ");
 						
 						for(String word : words) {
-							if(word == null || word.trim().equals("")) {
-								continue;
-							}
-							String processed = word.toLowerCase();
-							processed = processed.replaceAll("[^a-zA-Z ]", "");
-							
-							if(frequency.containsKey(processed)) 
-							{
-								frequency.put(processed, frequency.get(processed) + 1);
-							} else {
-								frequency.put(processed, 1);
-							}
+								if(frequency.containsKey(word))
+								{
+									frequency.put(word, frequency.get(word) + 1);
+								}
+								else
+								{
+									frequency.put(word, 1);
+								}
 						}
-					}
 					
-					line = reader.readLine();
-				}
-				reader.close();
-				System.out.println("FileName: " + fileName + "\n");
 				System.out.println(frequency);
 				
 				int mostFrequentlyUsed = 0;
 				String theWord = null;
 				
-				for(String word : frequency.keySet()) {
-					Integer theVal = frequency.get(word);
+				for(String w : frequency.keySet()) {
+					Integer theVal = frequency.get(w);
 					if(theVal > mostFrequentlyUsed) {
 						mostFrequentlyUsed = theVal;
-						theWord = word;
+						theWord = w;
 					}
 				}
 				System.out.println();
 				System.out.printf("The most frequently used word is '%s', used %d times.", 
 						theWord, mostFrequentlyUsed);
-				System.out.println();
-				
-				
-				
-			} catch (FileNotFoundException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+				System.out.println();	
 	}
 	
 	
-	public void uniqueWords(String fileName) throws Exception
+	public void uniqueWords(String file) throws Exception
 	{
-			BufferedReader reader = new BufferedReader(new FileReader(fileName));
+			BufferedReader reader = new BufferedReader(new FileReader(file));
 			
 			Set<String> wordsOf = new HashSet<>();
 		
