@@ -1,5 +1,11 @@
 import java.io.*;
-
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.*;
 
 public class ReadFromFile 
 {
@@ -9,6 +15,8 @@ public class ReadFromFile
 	private String file4 = "test4.txt";
 	private String file5 = "test5.txt";
 	private String content = ""; 
+	private String selected = "";
+
 	
 	public String getFile1()
 	{
@@ -39,11 +47,35 @@ public class ReadFromFile
 	{
 		return content;
 	}
+	public void setSelected(String selected)
+	{
+		selected = this.selected;
+	}
+
+	public void FileSelect() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Available Files are:\n"
+				+ file1 + "\n" +
+				file2 + "\n" +
+				file3 + "\n" +
+				file4 + "\n" +
+				file5);
+		System.out.println("Please select the first file you would like to compare");
+		String i = sc.nextLine();
+		if(i.equals("Test1.txt") || i.equals("test1.txt") || i.equals("test1"))
+		{
+			System.out.println("You have selected file1");
+			this.setSelected("test1.txt");
+		}
+		sc.close();
+	}
+	
 	
 	public void removeFormatting()
 	{
 		try {
-			BufferedReader in = new BufferedReader(new FileReader(file1));
+			
+			BufferedReader in = new BufferedReader(new FileReader(selected));
 			String line = "";
 			
 			while((line = in.readLine()) != null)
@@ -57,11 +89,14 @@ public class ReadFromFile
 			content = content.toLowerCase();
 			content = content.replaceAll("[^a-zA-Z ]", "");
 			in.close();
+			System.out.println(line);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch(IOException e) {
 			e.printStackTrace();
 		}
 	}
+	
+	
 	
 }

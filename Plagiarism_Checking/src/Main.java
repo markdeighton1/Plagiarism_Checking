@@ -1,36 +1,19 @@
 import java.io.*;
+import java.util.List;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
 public class Main 
 {
-	public static void main(String[] args)
+	public static void main(String[] args) throws Exception
 	{
-		/*String fileName = "test1.txt";
 		
-		String line = null;
+		/*ReadFromFile RFF = new ReadFromFile();
+		RFF.FileSelect();
+		RFF.removeFormatting();*/
 		
-		try {
-			FileReader fileReader = new FileReader(fileName);
-			
-			BufferedReader bufferedReader = new BufferedReader(fileReader);
-			
-			while((line = bufferedReader.readLine()) != null) 
-			{
-				System.out.println(line);
-			}
-			
-			bufferedReader.close();
-		}
-		catch(FileNotFoundException ex)
-		{
-			System.out.println("Unable to open file '" + fileName + "'");
-		}
-		catch(IOException ex) {
-			System.out.println("Error reading file '" + fileName + "'");
-		}*/
 		
-		ReadFromFile RFF = new ReadFromFile();
-		RFF.removeFormatting();
-		String content = RFF.getContent();
-		System.out.println(content);
+		
 	}
 }	
