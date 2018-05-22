@@ -1,9 +1,10 @@
 import java.io.*;
+import java.util.Arrays;
 public class Main 
 {
 	public static void main(String[] args)
 	{
-		String fileName = "test1.txt";
+		/*String fileName = "test1.txt";
 		
 		String line = null;
 		
@@ -25,7 +26,11 @@ public class Main
 		}
 		catch(IOException ex) {
 			System.out.println("Error reading file '" + fileName + "'");
-		}
+		}*/
+		
+		
+		ReadFromFile RFF = new ReadFromFile();
+		RFF.removeCaptials();
 		
 		
 	}

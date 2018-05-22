@@ -1,30 +1,61 @@
 import java.io.*;
+
+
 public class ReadFromFile 
 {
-	public void file1()
+	private String file1 = "test1.txt";
+	private String file2 = "test2.txt";
+	private String file3 = "test3.txt";
+	private String file4 = "test4.txt";
+	private String file5 = "test5.txt";
+	
+	public String getFile1()
 	{
-		String fileName = "test1.txt";
-		
-		String line = null;
-		
+		return file1;
+	}
+	
+	public String getFile2()
+	{
+		return file2;
+	}
+	
+	public String getFile3()
+	{
+		return file3;
+	}
+	
+	public String getFile4()
+	{
+		return file4;
+	}
+	
+	public String getFile5()
+	{
+		return file5;
+	}
+	
+	
+	public String removeCapitals()
+	{
 		try {
-			FileReader fileReader = new FileReader(fileName);
+			BufferedReader in = new BufferedReader(new FileReader(file1));
+			String fileContent = null;
+			String line = null;
 			
-			BufferedReader bufferedReader = new BufferedReader(fileReader);
-			
-			while((line = bufferedReader.readLine()) != null) 
+			while((line = in.readLine()) != null)
 			{
-				System.out.println(line);
+				fileContent = fileContent + line;
 			}
 			
-			bufferedReader.close();
-		}
-		catch(FileNotFoundException ex)
-		{
-			System.out.println("Unable to open file '" + fileName + "'");
-		}
-		catch(IOException ex) {
-			System.out.println("Error reading file '" + fileName + "'");
-		}
+			fileContent = fileContent.toLowerCase();
+			System.out.println(fileContent);
+			in.close();
+		} catch(FileNotFoundException e) {
+			e.printStackTrace();
+		} catch(IOException e) {
+			e.printStackTrace();
+		} 
+		return null;
 	}
+	
 }
