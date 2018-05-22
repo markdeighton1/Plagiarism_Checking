@@ -13,9 +13,13 @@ public class Main
 		RFF.FileSelect();
 		RFF.removeFormatting();*/
 		
+		ReadFromFile RFF = new ReadFromFile();
+		RFF.FileSelect();
+		RFF.removeFormatting();
+		
 		Frequency Frequency = new Frequency();
-		Frequency.frequency("test2.txt");
-		Frequency.uniqueWords("test2.txt");
+		Frequency.frequency(RFF.getSelected());
+		Frequency.uniqueWords(RFF.getSelected());
 		
 		
 		

@@ -47,9 +47,12 @@ public class ReadFromFile
 	{
 		return content;
 	}
-	public void setSelected(String selected)
+	public void setFile(String selected) {
+		this.selected = selected;
+	}
+	public String getSelected()
 	{
-		selected = this.selected;
+		return selected;
 	}
 
 	public void FileSelect() {
@@ -59,13 +62,13 @@ public class ReadFromFile
 				file2 + "\n" +
 				file3 + "\n" +
 				file4 + "\n" +
-				file5);
+				file5 + "\n");
 		System.out.println("Please select the first file you would like to compare");
 		String i = sc.nextLine();
-		if(i.equals("Test1.txt") || i.equals("test1.txt") || i.equals("test1"))
+		if(i.equals("Test1.txt") || i.equals("test1.txt") || i.equals("test1") || i.equals("1"))
 		{
-			System.out.println("You have selected file1");
-			this.setSelected("test1.txt");
+			System.out.println("You have selected file1\n");
+			this.setFile("test1.txt");
 		}
 		sc.close();
 	}
@@ -75,7 +78,7 @@ public class ReadFromFile
 	{
 		try {
 			
-			BufferedReader in = new BufferedReader(new FileReader(selected));
+			BufferedReader in = new BufferedReader(new FileReader(file1));
 			String line = "";
 			
 			while((line = in.readLine()) != null)
@@ -89,7 +92,7 @@ public class ReadFromFile
 			content = content.toLowerCase();
 			content = content.replaceAll("[^a-zA-Z ]", "");
 			in.close();
-			System.out.println(line);
+			System.out.println(content + "\n");
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch(IOException e) {
