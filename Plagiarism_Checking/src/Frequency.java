@@ -25,6 +25,22 @@ public class Frequency {
 		return mostFrequentlyUsed2; 
 	}
 	
+	public void setFrequency2(String frequency2)
+	{
+		this.frequency2 = frequency2;
+	}
+	
+	public void setTheWord2(String theWord2)
+	{
+		this.theWord2 = theWord2;
+	}
+	
+	public void setMostFrequentlyUsed2(String mostFrequentlyUsed2)
+	{
+		this.mostFrequentlyUsed2 = mostFrequentlyUsed2;
+	}
+	
+	
 	public void frequency(String file) 
 	{		
 				Map<String, Integer> frequency = new HashMap<>();
