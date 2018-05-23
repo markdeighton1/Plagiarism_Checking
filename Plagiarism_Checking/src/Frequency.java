@@ -125,7 +125,7 @@ public class Frequency {
 				});
 				
 				sortedList = sortedList.subList(0, 10);
-				
+				this.setMostFrequentlyUsed(0);
 				for(String w : frequency.keySet()) {
 					Integer theVal = frequency.get(w);
 					if(theVal > mostFrequentlyUsed) {
@@ -172,6 +172,5 @@ public class Frequency {
 			System.out.println(totalWords);
 			System.out.println();
 			
-			wordsOfFile.clear();
 	}
 }
