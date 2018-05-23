@@ -96,7 +96,7 @@ public class Frequency {
 	}
 	
 	
-	public void uniqueWords(String file) throws Exception
+	public void uniqueWords(String file)
 	{
 			Set<String> wordsOf = new HashSet<>();
 			
