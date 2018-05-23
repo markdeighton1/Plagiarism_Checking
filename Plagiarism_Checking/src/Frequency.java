@@ -1,7 +1,13 @@
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeMap;
+import java.util.List;
+import static java.util.Collections.reverseOrder;
+import static java.util.Comparator.comparing;
+import static java.util.stream.Collectors.toList;
 
 
 public class Frequency {
@@ -72,8 +78,17 @@ public class Frequency {
 								}
 						}
 				
-				frequency.remove("");
-						
+				frequency.remove("");	
+				
+				TreeMap<String, Integer> sorted = new TreeMap<>();
+				
+				sorted.putAll(frequency);
+				
+				for(Map.Entry<String, Integer> entry : sorted.entrySet())
+				{
+					System.out.println("Key = " + entry.getKey() + " , Value = " + entry.getValue());
+				}
+								
 				System.out.println();
 				System.out.println(frequency);
 				

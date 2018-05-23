@@ -17,6 +17,7 @@ public class Compare
 			int one = Frequency.getMostFrequentlyUsed2();
 			int two = Frequency.getMostFrequentlyUsed();
 			
+			
 			System.out.println();
 			System.out.println(one);
 			System.out.println(two);
