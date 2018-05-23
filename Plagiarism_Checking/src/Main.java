@@ -10,7 +10,7 @@ public class Main
 		 */
 		
 		Compare Compare = new Compare();
-		
+		Compare.comparison();
 		
 		
 	}

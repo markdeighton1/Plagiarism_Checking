@@ -71,7 +71,10 @@ public class Frequency {
 									frequency.put(word, 1);
 								}
 						}
-					
+				
+						
+						
+				System.out.println();
 				System.out.println(frequency);
 				
 				for(String w : frequency.keySet()) {
