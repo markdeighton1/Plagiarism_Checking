@@ -1,15 +1,10 @@
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.stream.Collectors;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.Set;
-import java.util.TreeMap;
-import java.util.List;
-import static java.util.Collections.reverseOrder;
-import static java.util.Comparator.comparing;
-import static java.util.stream.Collectors.toList;
+
 
 
 public class Frequency {
@@ -18,6 +13,9 @@ public class Frequency {
 	private int mostFrequentlyUsed = 0;
 	private String theWord2 = "";
 	private int mostFrequentlyUsed2 = 0;
+	private int uniqueWords = 0;
+	private int uniqueWords1 = 0;
+	
 
 	
 	public String getTheWord2()
@@ -61,6 +59,25 @@ public class Frequency {
 		this.mostFrequentlyUsed = mostFrequentlyUsed;
 	}
 	
+	public void setUniqueWord(int uniqueWords)
+	{
+		this.uniqueWords = uniqueWords;
+	}
+	
+	public void setUniqueWord2(int uniqueWords1)
+	{
+		this.uniqueWords1 = uniqueWords1;
+	}
+	
+	public int getUniqueWord()
+	{
+		return uniqueWords;
+	}
+	
+	public int getUniqueWord1()
+	{
+		return uniqueWords1;
+	}
 	
 	public void frequency(String file, int count) 
 	{		
@@ -80,14 +97,18 @@ public class Frequency {
 								}
 						}
 				
-				frequency.remove("");	
+				frequency.remove("");
 				
+				System.out.println();
 				Map<String, Integer> sortedMap = frequency.entrySet().stream()
 						.sorted(Map.Entry.comparingByValue())
 						.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
 								(e1, e2) -> e1, LinkedHashMap::new));
-				System.out.println(sortedMap);
 				
+				//list
+				//sort list
+				
+				System.out.println(sortedMap);
 				
 				for(String w : frequency.keySet()) {
 					Integer theVal = frequency.get(w);
@@ -108,7 +129,7 @@ public class Frequency {
 	}
 	
 	
-	public void uniqueWords(String file)
+	public void uniqueWords(String file, int count)
 	{
 			Set<String> wordsOf = new HashSet<>();
 			
@@ -123,7 +144,12 @@ public class Frequency {
 						wordsOf.add(cleanedUpWord);
 					}
 					
-			
+			if(count == 1)
+			{
+				this.setUniqueWord(wordsOf.size());
+				
+			}
+					
 			System.out.println();
 			System.out.println("Unique Words:");
 			System.out.println(wordsOf.size());

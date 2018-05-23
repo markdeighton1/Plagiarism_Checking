@@ -12,15 +12,17 @@ public class Compare
 			String file = RFF.getContent();
 			String file2 = RFF.getContent2();
 			Frequency.frequency(file2, 1);
+			Frequency.uniqueWords(file2, 1);
 			Frequency.frequency(file, 0);
+			Frequency.uniqueWords(file, 0);
 			
 			int one = Frequency.getMostFrequentlyUsed2();
 			int two = Frequency.getMostFrequentlyUsed();
-			
-			
 			System.out.println();
-			System.out.println(one);
-			System.out.println(two);
+			System.out.println("In file " + RFF.getFileName() + " there are " );
+			
+			
+			
 		}
 		
 		
