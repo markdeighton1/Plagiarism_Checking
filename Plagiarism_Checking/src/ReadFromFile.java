@@ -93,7 +93,7 @@ public class ReadFromFile
 			System.out.println("You have selected test5.txt\n");
 			this.setFile("test5.txt");
 		}
-		sc.close();
+		
 	}
 	
 	

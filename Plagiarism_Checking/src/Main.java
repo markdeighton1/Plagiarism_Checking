@@ -14,8 +14,6 @@ public class Main
 		RFF.removeFormatting();
 		String file = RFF.getContent();
 		//System.out.println(file);
-
-		
 		Frequency Frequency = new Frequency();
 		Frequency.frequency(file);
 		Frequency.uniqueWords(RFF.getSelected());
