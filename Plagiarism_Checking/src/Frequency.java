@@ -1,15 +1,29 @@
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.*;
+
 
 public class Frequency {
 	
+	private String frequency2 = "";
+	private String theWord2 = "";
+	private String mostFrequentlyUsed2 = "";
+	
+	public String getFrequency2()
+	{
+		return frequency2;
+	}
+	
+	public String getTheWord2()
+	{
+		return theWord2;
+	}
+	
+	public String getMostFrequentlyUsed2()
+	{
+		return mostFrequentlyUsed2; 
+	}
 	
 	public void frequency(String file) 
 	{		
