@@ -91,7 +91,7 @@ public class ReadFromFile
 				this.setFile("test1.txt");
 				this.removeFormatting();
 				this.setContent2(content);
-				this.setContent2("");
+				this.setContent("");
 				System.out.println("Available Files are:\n" +
 						file2 + "\n" +
 						file3 + "\n" +
