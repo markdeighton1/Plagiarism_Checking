@@ -1,7 +1,8 @@
 
-public class Compare {
-	public void printAll()
+public class Compare 
 	{
+
+		
 		
 	}
-}
+
