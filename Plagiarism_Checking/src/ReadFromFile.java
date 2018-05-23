@@ -91,7 +91,6 @@ public class ReadFromFile
 				this.setFile("test1.txt");
 				this.removeFormatting();
 				this.setContent2(content);
-				this.setContent("");
 				System.out.println("Available Files are:\n" +
 						file2 + "\n" +
 						file3 + "\n" +
@@ -264,6 +263,7 @@ public class ReadFromFile
 			
 			BufferedReader in = new BufferedReader(new FileReader(selected));
 			String line = "";
+			this.setContent("");
 			
 			while((line = in.readLine()) != null)
 			{

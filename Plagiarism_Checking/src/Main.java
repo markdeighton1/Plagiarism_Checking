@@ -16,9 +16,9 @@ public class Main
 		System.out.println(file);
 		System.out.println();
 		System.out.println(file2);
-//		Frequency Frequency = new Frequency();
-//		Frequency.frequency(file);
-//		Frequency.uniqueWords(RFF.getSelected());
+		Frequency Frequency = new Frequency();
+		Frequency.frequency(file2);
+		Frequency.uniqueWords(RFF.getSelected());
 		
 		
 		
