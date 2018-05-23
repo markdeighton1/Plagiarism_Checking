@@ -1,7 +1,9 @@
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.stream.Collectors;
 import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.Set;
 import java.util.TreeMap;
 import java.util.List;
@@ -80,17 +82,12 @@ public class Frequency {
 				
 				frequency.remove("");	
 				
-				TreeMap<String, Integer> sorted = new TreeMap<>();
+				Map<String, Integer> sortedMap = frequency.entrySet().stream()
+						.sorted(Map.Entry.comparingByValue())
+						.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
+								(e1, e2) -> e1, LinkedHashMap::new));
+				System.out.println(sortedMap);
 				
-				sorted.putAll(frequency);
-				
-				for(Map.Entry<String, Integer> entry : sorted.entrySet())
-				{
-					System.out.println("Key = " + entry.getKey() + " , Value = " + entry.getValue());
-				}
-								
-				System.out.println();
-				System.out.println(frequency);
 				
 				for(String w : frequency.keySet()) {
 					Integer theVal = frequency.get(w);
