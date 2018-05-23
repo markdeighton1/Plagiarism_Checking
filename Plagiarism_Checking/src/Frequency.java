@@ -72,7 +72,7 @@ public class Frequency {
 								}
 						}
 				
-						
+				frequency.remove("");
 						
 				System.out.println();
 				System.out.println(frequency);
