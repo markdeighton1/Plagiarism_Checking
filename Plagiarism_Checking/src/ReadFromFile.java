@@ -16,6 +16,7 @@ public class ReadFromFile
 	private String file5 = "test5.txt";
 	private String content = ""; 
 	private String selected = "";
+	private String selected2 = "";
 
 	
 	public String getFile1()
@@ -61,6 +62,16 @@ public class ReadFromFile
 	{
 		return selected;
 	}
+	
+	public void setFile2(String selected2)
+	{
+		this.selected2 = selected2;
+	}
+	
+	public String getSelected2()
+	{
+		return selected2;
+	}
 
 	public void FileSelect() {
 		Scanner sc = new Scanner(System.in);
@@ -74,24 +85,164 @@ public class ReadFromFile
 		String i = sc.nextLine();
 		if(i.equals("Test1.txt") || i.equals("test1.txt") || i.equals("test1") || i.equals("1"))
 		{
-			System.out.println("You have selected test1.txt\n");
-			this.setFile("test1.txt");
+			
+				System.out.println("You have selected test1.txt\n");
+				this.setFile("test1.txt");
+				System.out.println("Available Files are:\n" +
+						file2 + "\n" +
+						file3 + "\n" +
+						file4 + "\n" +
+						file5 + "\n");
+				System.out.println("Please select the second file you would like to compare");
+				String j = sc.nextLine();
+				if(j.equals("Test2.txt") || j.equals("test2.txt") || j.equals("test2") || j.equals("2"))
+				{
+					System.out.println("You have selected test2.txt\n");
+					this.setFile2("test2.txt");
+					
+				} else if(j.equals("Test3.txt") || j.equals("test3.txt") || j.equals("test3") || j.equals("3"))
+				{
+					System.out.println("You have selected test3.txt\n");
+					this.setFile2("test3.txt");
+					
+				} else if(j.equals("Test4.txt") || j.equals("test4.txt") || j.equals("test4") || j.equals("4"))
+				{
+					System.out.println("You have selected test5.txt\n");
+					this.setFile2("test4.txt");
+					
+				} else if(j.equals("Test5.txt") || j.equals("test5.txt") || j.equals("test5") || j.equals("5"))
+				{
+					System.out.println("You have selected test5.txt\n");
+					this.setFile2("test5.txt");
+				}
+				
 		} else if(i.equals("Test2.txt") || i.equals("test2.txt") || i.equals("test2") || i.equals("2"))
 		{
-			System.out.println("You have selected test2.txt\n");
-			this.setFile("test2.txt");
+			
+				System.out.println("You have selected test2.txt\n");
+				this.setFile("test2.txt");
+				System.out.println("Available Files are:\n" +
+						file1 + "\n" +
+						file3 + "\n" +
+						file4 + "\n" +
+						file5 + "\n");
+				System.out.println("Please select the second file you would like to compare");
+				String j = sc.nextLine();
+				if(j.equals("Test1.txt") || j.equals("test1.txt") || j.equals("test1") || j.equals("1"))
+				{
+					System.out.println("You have selected test1.txt\n");
+					this.setFile2("test1.txt");
+					
+				} else if(j.equals("Test3.txt") || j.equals("test3.txt") || j.equals("test3") || j.equals("3"))
+				{
+					System.out.println("You have selected test3.txt\n");
+					this.setFile2("test3.txt");
+					
+				} else if(j.equals("Test4.txt") || j.equals("test4.txt") || j.equals("test4") || j.equals("4"))
+				{
+					System.out.println("You have selected test5.txt\n");
+					this.setFile2("test4.txt");
+					
+				} else if(j.equals("Test5.txt") || j.equals("test5.txt") || j.equals("test5") || j.equals("5"))
+				{
+					System.out.println("You have selected test5.txt\n");
+					this.setFile2("test5.txt");
+				}
+				
 		} else if(i.equals("Test3.txt") || i.equals("test3.txt") || i.equals("test3") || i.equals("3"))
 		{
-			System.out.println("You have selected test3.txt\n");
-			this.setFile("test3.txt");
+				System.out.println("You have selected test3.txt\n");
+				this.setFile("test3.txt");
+				System.out.println("Available Files are:\n" +
+						file1 + "\n" +
+						file2 + "\n" +
+						file4 + "\n" +
+						file5 + "\n");
+				System.out.println("Please select the second file you would like to compare");
+				String j = sc.nextLine();
+				if(j.equals("Test1.txt") || j.equals("test1.txt") || j.equals("test1") || j.equals("1"))
+				{
+					System.out.println("You have selected test1.txt\n");
+					this.setFile2("test1.txt");
+					
+				} else if(j.equals("Test2.txt") || j.equals("test2.txt") || j.equals("test2") || j.equals("2"))
+				{
+					System.out.println("You have selected test2.txt\n");
+					this.setFile2("test2.txt");
+					
+				} else if(j.equals("Test4.txt") || j.equals("test4.txt") || j.equals("test4") || j.equals("4"))
+				{
+					System.out.println("You have selected test3.txt\n");
+					this.setFile2("test4.txt");
+					
+				} else if(j.equals("Test5.txt") || j.equals("test5.txt") || j.equals("test5") || j.equals("5"))
+				{
+					System.out.println("You have selected test5.txt\n");
+					this.setFile2("test5.txt");
+				}
+				
 		}else if(i.equals("Test4.txt") || i.equals("test4.txt") || i.equals("test4") || i.equals("4"))
 		{
 			System.out.println("You have selected test4.txt\n");
 			this.setFile("test4.txt");
+			System.out.println("Available Files are:\n" +
+					file1 + "\n" +
+					file2 + "\n" +
+					file3 + "\n" +
+					file5 + "\n");
+			System.out.println("Please select the second file you would like to compare");
+			String j = sc.nextLine();
+			if(j.equals("Test1.txt") || j.equals("test1.txt") || j.equals("test1") || j.equals("1"))
+			{
+				System.out.println("You have selected test1.txt\n");
+				this.setFile2("test1.txt");
+				
+			} else if(j.equals("Test2.txt") || j.equals("test2.txt") || j.equals("test2") || j.equals("2"))
+			{
+				System.out.println("You have selected test2.txt\n");
+				this.setFile2("test2.txt");
+				
+			} else if(j.equals("Test3.txt") || j.equals("test3.txt") || j.equals("test3") || j.equals("3"))
+			{
+				System.out.println("You have selected test3.txt\n");
+				this.setFile2("test3.txt");
+				
+			} else if(j.equals("Test5.txt") || j.equals("test5.txt") || j.equals("test5") || j.equals("5"))
+			{
+				System.out.println("You have selected test5.txt\n");
+				this.setFile2("test5.txt");
+			}
 		}else if(i.equals("Test5.txt") || i.equals("test5.txt") || i.equals("test5") || i.equals("5"))
 		{
 			System.out.println("You have selected test5.txt\n");
 			this.setFile("test5.txt");
+			System.out.println("Available Files are:\n" +
+					file1 + "\n" +
+					file2 + "\n" +
+					file3 + "\n" +
+					file4 + "\n");
+			System.out.println("Please select the second file you would like to compare");
+			String j = sc.nextLine();
+			if(j.equals("Test1.txt") || j.equals("test1.txt") || j.equals("test1") || j.equals("1"))
+			{
+				System.out.println("You have selected test1.txt\n");
+				this.setFile2("test1.txt");
+				
+			} else if(j.equals("Test2.txt") || j.equals("test2.txt") || j.equals("test2") || j.equals("2"))
+			{
+				System.out.println("You have selected test2.txt\n");
+				this.setFile2("test2.txt");
+				
+			} else if(j.equals("Test3.txt") || j.equals("test3.txt") || j.equals("test3") || j.equals("3"))
+			{
+				System.out.println("You have selected test3.txt\n");
+				this.setFile2("test3.txt");
+				
+			} else if(j.equals("Test4.txt") || j.equals("test4.txt") || j.equals("test4") || j.equals("4"))
+			{
+				System.out.println("You have selected test5.txt\n");
+				this.setFile2("test4.txt");
+			}
 		}
 		
 	}

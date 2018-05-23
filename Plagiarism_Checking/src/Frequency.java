@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.*;
 
 public class Frequency {
 	
@@ -29,7 +30,7 @@ public class Frequency {
 						}
 					
 				System.out.println(frequency);
-				
+
 				int mostFrequentlyUsed = 0;
 				String theWord = null;
 				
