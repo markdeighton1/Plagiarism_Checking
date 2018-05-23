@@ -323,6 +323,7 @@ public class ReadFromFile
 				this.removeFormatting();
 			}
 		}
+		sc.close();
 	}
 	
 	

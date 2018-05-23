@@ -133,6 +133,7 @@ public class Frequency {
 						this.setTheWord(w);
 					}
 				}
+				System.out.println(sortedList);
 				System.out.println();
 				System.out.printf("The most frequently used word is '%s', used %d times.", 
 						theWord, mostFrequentlyUsed);
@@ -148,7 +149,7 @@ public class Frequency {
 	
 	public void uniqueWords(String file, int count)
 	{
-			Set<String> wordsOf = new HashSet<>();
+			Set<String> wordsOfFile = new HashSet<>();
 			
 			int totalWords = 0;
 			
@@ -157,20 +158,20 @@ public class Frequency {
 					
 					for(String word : words)
 					{
-						String cleanedUpWord = word;
-						wordsOf.add(cleanedUpWord);
+						
+						wordsOfFile.add(word);
 					}
 					
-			if(count == 1)
-			{
-				this.setUniqueWord(wordsOf.size());
-			}
+			
 					
 			System.out.println();
 			System.out.println("Unique Words:");
-			System.out.println(wordsOf.size());
+			System.out.println(wordsOfFile.size());
 			System.out.println();
 			System.out.println("Total Words: ");
 			System.out.println(totalWords);
+			System.out.println();
+			
+			wordsOfFile.clear();
 	}
 }
