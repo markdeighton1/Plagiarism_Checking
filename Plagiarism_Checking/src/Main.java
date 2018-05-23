@@ -18,8 +18,8 @@ public class Main
 		System.out.println(file);
 		System.out.println();
 		Frequency Frequency = new Frequency();
-		Frequency.frequency(file2);
-		Frequency.uniqueWords(file2);
+		Frequency.frequency(file2, 1);
+		
 		
 		
 		

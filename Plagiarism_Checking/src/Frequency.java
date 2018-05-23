@@ -6,42 +6,55 @@ import java.util.Set;
 
 public class Frequency {
 	
-	private String frequency2 = "";
+	private String theWord = "";
+	private int mostFrequentlyUsed = 0;
 	private String theWord2 = "";
-	private String mostFrequentlyUsed2 = "";
-	
-	public String getFrequency2()
-	{
-		return frequency2;
-	}
+	private int mostFrequentlyUsed2 = 0;
+
 	
 	public String getTheWord2()
 	{
 		return theWord2;
 	}
 	
-	public String getMostFrequentlyUsed2()
+	public int getMostFrequentlyUsed2()
 	{
 		return mostFrequentlyUsed2; 
 	}
 	
-	public void setFrequency2(String frequency2)
-	{
-		this.frequency2 = frequency2;
-	}
 	
 	public void setTheWord2(String theWord2)
 	{
 		this.theWord2 = theWord2;
 	}
 	
-	public void setMostFrequentlyUsed2(String mostFrequentlyUsed2)
+	public void setMostFrequentlyUsed2(int mostFrequentlyUsed2)
 	{
 		this.mostFrequentlyUsed2 = mostFrequentlyUsed2;
 	}
 	
+	public String getTheWord()
+	{
+		return theWord;
+	}
 	
-	public void frequency(String file) 
+	public int getMostFrequentlyUsed()
+	{
+		return mostFrequentlyUsed;
+	}
+	
+	public void setTheWord(String theWord)
+	{
+		this.theWord = theWord;
+	}
+	
+	public void setMostFrequentlyUsed(int mostFrequentlyUsed)
+	{
+		this.mostFrequentlyUsed = mostFrequentlyUsed;
+	}
+	
+	
+	public void frequency(String file, int count) 
 	{		
 				Map<String, Integer> frequency = new HashMap<>();
 						
@@ -62,19 +75,20 @@ public class Frequency {
 				System.out.println(frequency);
 
 				int mostFrequentlyUsed = 0;
-				String theWord = null;
+				
 				
 				for(String w : frequency.keySet()) {
 					Integer theVal = frequency.get(w);
 					if(theVal > mostFrequentlyUsed) {
 						mostFrequentlyUsed = theVal;
-						theWord = w;
+						this.setTheWord(w);
 					}
 				}
 				System.out.println();
 				System.out.printf("The most frequently used word is '%s', used %d times.", 
 						theWord, mostFrequentlyUsed);
 				System.out.println();	
+				
 	}
 	
 	
