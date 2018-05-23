@@ -50,33 +50,25 @@ public class Frequency {
 	
 	public void uniqueWords(String file) throws Exception
 	{
-			BufferedReader reader = new BufferedReader(new FileReader(file));
-			
 			Set<String> wordsOf = new HashSet<>();
-		
-			String line = reader.readLine();
+			
 			int totalWords = 0;
-			while(line != null) 
-			{
-				if(!line.trim().equals("")) 
-				{
-					String [] words = line.split(" ");
+			
+					String [] words = file.split(" ");
 					totalWords += words.length;
 					
 					for(String word : words)
 					{
-						String cleanedUpWord = word.toLowerCase().replaceAll("[^a-zA-Z ]", "");
+						String cleanedUpWord = word;
 						wordsOf.add(cleanedUpWord);
 					}
-				}
-				line = reader.readLine();
-			} 
+					
+			
 			System.out.println();
 			System.out.println("Unique Words:");
 			System.out.println(wordsOf.size());
 			System.out.println();
 			System.out.println("Total Words: ");
 			System.out.println(totalWords);
-			reader.close();
 	}
 }
