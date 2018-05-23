@@ -13,9 +13,10 @@ public class Main
 		RFF.FileSelect();
 		String file = RFF.getContent();
 		String file2 = RFF.getContent2();
+		System.out.println(file2);
+		System.out.println();
 		System.out.println(file);
 		System.out.println();
-		System.out.println(file2);
 		Frequency Frequency = new Frequency();
 		Frequency.frequency(file2);
 		Frequency.uniqueWords(file2);

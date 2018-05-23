@@ -125,9 +125,11 @@ public class ReadFromFile
 				
 		} else if(i.equals("Test2.txt") || i.equals("test2.txt") || i.equals("test2") || i.equals("2"))
 		{
-				this.setContent2(content);
+				
 				System.out.println("You have selected test2.txt\n");
 				this.setFile("test2.txt");
+				this.removeFormatting();
+				this.setContent2(content);
 				System.out.println("Available Files are:\n" +
 						file1 + "\n" +
 						file3 + "\n" +
@@ -139,28 +141,34 @@ public class ReadFromFile
 				{
 					System.out.println("You have selected test1.txt\n");
 					this.setFile("test1.txt");
+					this.removeFormatting();
 					
 				} else if(j.equals("Test3.txt") || j.equals("test3.txt") || j.equals("test3") || j.equals("3"))
 				{
 					System.out.println("You have selected test3.txt\n");
 					this.setFile("test3.txt");
+					this.removeFormatting();
 					
 				} else if(j.equals("Test4.txt") || j.equals("test4.txt") || j.equals("test4") || j.equals("4"))
 				{
 					System.out.println("You have selected test5.txt\n");
 					this.setFile("test4.txt");
+					this.removeFormatting();
 					
 				} else if(j.equals("Test5.txt") || j.equals("test5.txt") || j.equals("test5") || j.equals("5"))
 				{
 					System.out.println("You have selected test5.txt\n");
 					this.setFile("test5.txt");
+					this.removeFormatting();
 				}
 				
 		} else if(i.equals("Test3.txt") || i.equals("test3.txt") || i.equals("test3") || i.equals("3"))
 		{
-				this.setContent2(content);
+				
 				System.out.println("You have selected test3.txt\n");
 				this.setFile("test3.txt");
+				this.removeFormatting();
+				this.setContent2(content);
 				System.out.println("Available Files are:\n" +
 						file1 + "\n" +
 						file2 + "\n" +
@@ -172,28 +180,34 @@ public class ReadFromFile
 				{
 					System.out.println("You have selected test1.txt\n");
 					this.setFile("test1.txt");
+					this.removeFormatting();
 					
 				} else if(j.equals("Test2.txt") || j.equals("test2.txt") || j.equals("test2") || j.equals("2"))
 				{
 					System.out.println("You have selected test2.txt\n");
 					this.setFile("test2.txt");
+					this.removeFormatting();
 					
 				} else if(j.equals("Test4.txt") || j.equals("test4.txt") || j.equals("test4") || j.equals("4"))
 				{
 					System.out.println("You have selected test3.txt\n");
 					this.setFile("test4.txt");
+					this.removeFormatting();
 					
 				} else if(j.equals("Test5.txt") || j.equals("test5.txt") || j.equals("test5") || j.equals("5"))
 				{
 					System.out.println("You have selected test5.txt\n");
 					this.setFile("test5.txt");
+					this.removeFormatting();
 				}
 				
 		}else if(i.equals("Test4.txt") || i.equals("test4.txt") || i.equals("test4") || i.equals("4"))
 		{
-			this.setContent2(content);
+			
 			System.out.println("You have selected test4.txt\n");
 			this.setFile("test4.txt");
+			this.removeFormatting();
+			this.setContent2(content);
 			System.out.println("Available Files are:\n" +
 					file1 + "\n" +
 					file2 + "\n" +
@@ -205,27 +219,33 @@ public class ReadFromFile
 			{
 				System.out.println("You have selected test1.txt\n");
 				this.setFile("test1.txt");
+				this.removeFormatting();
 				
 			} else if(j.equals("Test2.txt") || j.equals("test2.txt") || j.equals("test2") || j.equals("2"))
 			{
 				System.out.println("You have selected test2.txt\n");
 				this.setFile("test2.txt");
+				this.removeFormatting();
 				
 			} else if(j.equals("Test3.txt") || j.equals("test3.txt") || j.equals("test3") || j.equals("3"))
 			{
 				System.out.println("You have selected test3.txt\n");
 				this.setFile("test3.txt");
+				this.removeFormatting();
 				
 			} else if(j.equals("Test5.txt") || j.equals("test5.txt") || j.equals("test5") || j.equals("5"))
 			{
 				System.out.println("You have selected test5.txt\n");
 				this.setFile("test5.txt");
+				this.removeFormatting();
 			}
 		}else if(i.equals("Test5.txt") || i.equals("test5.txt") || i.equals("test5") || i.equals("5"))
 		{
-			this.setContent2(content);
+			
 			System.out.println("You have selected test5.txt\n");
 			this.setFile("test5.txt");
+			this.removeFormatting();
+			this.setContent2(content);
 			System.out.println("Available Files are:\n" +
 					file1 + "\n" +
 					file2 + "\n" +
@@ -237,21 +257,25 @@ public class ReadFromFile
 			{
 				System.out.println("You have selected test1.txt\n");
 				this.setFile("test1.txt");
+				this.removeFormatting();
 				
 			} else if(j.equals("Test2.txt") || j.equals("test2.txt") || j.equals("test2") || j.equals("2"))
 			{
 				System.out.println("You have selected test2.txt\n");
 				this.setFile("test2.txt");
+				this.removeFormatting();
 				
 			} else if(j.equals("Test3.txt") || j.equals("test3.txt") || j.equals("test3") || j.equals("3"))
 			{
 				System.out.println("You have selected test3.txt\n");
 				this.setFile("test3.txt");
+				this.removeFormatting();
 				
 			} else if(j.equals("Test4.txt") || j.equals("test4.txt") || j.equals("test4") || j.equals("4"))
 			{
 				System.out.println("You have selected test5.txt\n");
 				this.setFile("test4.txt");
+				this.removeFormatting();
 			}
 		}
 	}
