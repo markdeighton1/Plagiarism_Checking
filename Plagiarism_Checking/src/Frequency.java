@@ -1,9 +1,12 @@
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.stream.Collectors;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.Set;
+import java.util.*;
+
 
 
 
@@ -79,6 +82,7 @@ public class Frequency {
 		return uniqueWords1;
 	}
 	
+	
 	public void frequency(String file, int count) 
 	{		
 				Map<String, Integer> frequency = new HashMap<>();
@@ -98,17 +102,29 @@ public class Frequency {
 						}
 				
 				frequency.remove("");
+				List<Map.Entry<String, Integer>> sortedList = new ArrayList<>();
+				for(String key : frequency.keySet())
+				{
+					sortedList.add(new AbstractMap.SimpleEntry<String, Integer>(key, frequency.get(key)));
+				}
+				Collections.sort(sortedList, new Comparator<Map.Entry<String, Integer>>() 
+				{
+					@Override
+					public int compare(final Map.Entry<String, Integer> lhs, Map.Entry<String, Integer> rhs) 
+					{
+						if(lhs.getValue() < rhs.getValue())
+						{
+							return 1;
+						} 
+						if(lhs.getValue() > rhs.getValue())
+						{
+							return -1;
+						}
+						return 0;
+					}
+				});
 				
-				System.out.println();
-				Map<String, Integer> sortedMap = frequency.entrySet().stream()
-						.sorted(Map.Entry.comparingByValue())
-						.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
-								(e1, e2) -> e1, LinkedHashMap::new));
-				
-				//list
-				//sort list
-				
-				System.out.println(sortedMap);
+				sortedList = sortedList.subList(0, 10);
 				
 				for(String w : frequency.keySet()) {
 					Integer theVal = frequency.get(w);
@@ -126,6 +142,7 @@ public class Frequency {
 					this.setTheWord2(theWord);
 					this.setMostFrequentlyUsed2(mostFrequentlyUsed);
 				} 
+				
 	}
 	
 	
@@ -147,7 +164,6 @@ public class Frequency {
 			if(count == 1)
 			{
 				this.setUniqueWord(wordsOf.size());
-				
 			}
 					
 			System.out.println();
