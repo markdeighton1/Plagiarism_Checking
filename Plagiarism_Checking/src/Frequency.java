@@ -73,9 +73,6 @@ public class Frequency {
 						}
 					
 				System.out.println(frequency);
-
-				int mostFrequentlyUsed = 0;
-				
 				
 				for(String w : frequency.keySet()) {
 					Integer theVal = frequency.get(w);
@@ -88,7 +85,11 @@ public class Frequency {
 				System.out.printf("The most frequently used word is '%s', used %d times.", 
 						theWord, mostFrequentlyUsed);
 				System.out.println();	
-				
+				if(count == 1)
+				{
+					this.setTheWord2(theWord);
+					this.setMostFrequentlyUsed2(mostFrequentlyUsed);
+				} 
 	}
 	
 	
