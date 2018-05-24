@@ -3,8 +3,22 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.*;
 
+/**
+* This class allows the user to select the two 
+* files to compare. It also reads the files and stores
+* them in variables.
+*
+*
+* @author  Mark Deighton
+* @version 1.0
+* @since   22-05-2018 
+*/
+
 public class ReadFromFile 
 {
+	/*
+	 * Private instance variables for security. 
+	 */
 	private String file1 = "test1.txt";
 	private String file2 = "test2.txt";
 	private String file3 = "test3.txt";
@@ -15,7 +29,11 @@ public class ReadFromFile
 	private String content = ""; 
 	private String content2 = "";
 	private String selected = "";
-
+	
+	/*
+	 * getters and setters to get private instance variables content
+	 * and sent them. 
+	 */
 	
 	public String getFile1()
 	{
@@ -91,6 +109,11 @@ public class ReadFromFile
 	{
 		return fileName2;
 	}
+	
+	/*
+	 * This method takes user input that checks which files should be
+	 * used for comparison. This is done with nested if else statements.
+	 */
 	
 	public void FileSelect() {
 		
@@ -326,6 +349,12 @@ public class ReadFromFile
 		sc.close();
 	}
 	
+	/*
+	 * This class removes the formatting of the text by removing white space, punctuation
+	 * and capitalisation. It ignores any text that is in quotation marks "".
+	 * 
+	 */
+	
 	
 	public void removeFormatting()
 	{
@@ -344,8 +373,7 @@ public class ReadFromFile
 				}
 			}
 			content = content.toLowerCase();
-			//strips out anything in quotes
-			content = content.replaceAll("\"[^\"]+\"", "");
+			content = content.replaceAll("\"[^\"]+\"", ""); //strips out anything in quotes
 			content = content.replaceAll("[^a-zA-Z ]", "");
 			this.setContent(content);
 			in.close();

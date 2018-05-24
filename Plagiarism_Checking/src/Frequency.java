@@ -6,11 +6,26 @@ import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.Set;
 import java.util.*;
-
+/**
+* This class is intended to check the frequency of words
+* of the file and find the unique words of that file.
+* It also sorts the most frequent words into a top 10 
+* list.
+*
+*
+*
+* @author  Mark Deighton
+* @version 1.0
+* @since   22-05-2018 
+*/
 
 
 
 public class Frequency {
+	
+	/*
+	 * Private instance variables for security. 
+	 */
 	
 	private String theWord = "";
 	private int mostFrequentlyUsed = 0;
@@ -18,6 +33,11 @@ public class Frequency {
 	private int mostFrequentlyUsed2 = 0;
 	private int uniqueWords = 0;
 	private int uniqueWords1 = 0;
+	
+	/*
+	 * getters and setters to get private instance variables content
+	 * and sent them. 
+	 */
 	
 
 	
@@ -81,6 +101,12 @@ public class Frequency {
 	{
 		return uniqueWords1;
 	}
+	/*
+	 * This method utilises hashmaps and list so that the file
+	 * when split into just words can be sorted into key and value pairs
+	 * this means that each word is assigned as the key and the value
+	 * is the number of times the word occurs
+	 */
 	
 	
 	public void frequency(String file, int count) 
@@ -101,7 +127,12 @@ public class Frequency {
 								}
 						}
 				
-				frequency.remove("");
+				frequency.remove(""); //removes any key & value that may be empty.
+				
+				/*
+				 * This allows me to sort the keyset (contents of the hashmap) 
+				 * into a largest to smallest order.
+				 */
 				List<Map.Entry<String, Integer>> sortedList = new ArrayList<>();
 				for(String key : frequency.keySet())
 				{
@@ -109,23 +140,31 @@ public class Frequency {
 				}
 				Collections.sort(sortedList, new Comparator<Map.Entry<String, Integer>>() 
 				{
-					@Override
+					@Override //Override a method subclass
 					public int compare(final Map.Entry<String, Integer> lhs, Map.Entry<String, Integer> rhs) 
 					{
+						//if lhs is greater than rhs 
 						if(lhs.getValue() < rhs.getValue())
 						{
-							return 1;
+							return 1; //return 1
 						} 
+						//if lhs is less than rhs
 						if(lhs.getValue() > rhs.getValue())
 						{
-							return -1;
+							return -1; // return -1
 						}
 						return 0;
 					}
 				});
 				
-				sortedList = sortedList.subList(0, 10);
+				sortedList = sortedList.subList(0, 10); //only obtain the first 10 entries of the sorted list
 				this.setMostFrequentlyUsed(0);
+				
+				/*
+				 * this gets the most frequently used words and 
+				 * prints that along with the top 10
+				 * most frequently used words
+				 */
 				for(String w : frequency.keySet()) {
 					Integer theVal = frequency.get(w);
 					if(theVal > mostFrequentlyUsed) {
@@ -145,8 +184,11 @@ public class Frequency {
 				} 
 				
 	}
-	
-	
+	/*
+	 * This method is used to get the total words and unique words of the file
+	 * and then print them out to screen. 
+	 */
+
 	public void uniqueWords(String file, int count)
 	{
 			Set<String> wordsOfFile = new HashSet<>();
